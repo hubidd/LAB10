@@ -1,0 +1,25 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Wyszukiwarka szkoleń{% endblock %}
+
+{% block content %}
+    <h1>Wyszukaj szkolenie</h1>
+    
+    <form method="get" action="/offer/search/">
+        <input type="text" name="q" placeholder="Wpisz fragment numeru (np. PROG)..." value="{{ zapytanie|default_if_none:'' }}">
+        <button type="submit">Szukaj</button>
+    </form>
+    
+    <hr>
+    
+    <ul>
+        {% for szkolenie in wyniki %}
+            <li>
+                <strong>{{ szkolenie.numer }}</strong> - Kategoria: {{ szkolenie.kategoria.nazwa }} 
+                <br>Cena: {{ szkolenie.cena }} PLN
+            </li>
+        {% empty %}
+            <li>Brak wyników do wyświetlenia.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

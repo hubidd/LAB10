@@ -1,0 +1,16 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Oferta - Kategorie{% endblock %}
+
+{% block content %}
+    <h1>Wybierz kategorię szkoleń</h1>
+    <ul>
+        {% for kat in kategorie %}
+            <li>
+                <a href="/offer/{{ kat.id }}/">{{ kat.nazwa }}</a>
+            </li>
+        {% empty %}
+            <li>Brak dostępnych kategorii. Dodaj je w panelu admina!</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

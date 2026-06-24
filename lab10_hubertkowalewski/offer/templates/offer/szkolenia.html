@@ -1,0 +1,19 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Szkolenia: {{ kategoria.nazwa }}{% endblock %}
+
+{% block content %}
+    <h1>Szkolenia z kategorii: {{ kategoria.nazwa }}</h1>
+    <a href="/offer/">← Powrót do kategorii</a>
+    <hr>
+    <ul>
+        {% for szkolenie in szkolenia %}
+            <li>
+                <strong>{{ szkolenie.numer }}</strong> - {{ szkolenie.cena }} PLN <br>
+                Czas trwania: {{ szkolenie.liczba_godzin }} h
+            </li>
+        {% empty %}
+            <li>Brak szkoleń w tej kategorii.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
