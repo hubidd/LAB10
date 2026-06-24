@@ -1,4 +1,3 @@
-# Projekt System Szkoleniowy (Lab 10)
 
 ## Opis projektu
 System do zarządzania ofertą szkoleniową oraz zgłaszania problemów technicznych, stworzony w frameworku Django.
