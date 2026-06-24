@@ -4,7 +4,7 @@
 System do zarządzania ofertą szkoleniową oraz zgłaszania problemów technicznych, stworzony w frameworku Django.
 
 ## Instrukcja wdrożenia
-1. Sklonuj repozytorium: `git clone <link-do-twojego-repo>`
+1. Sklonuj repozytorium: `git clone https://github.com/hubidd/LAB10.git`
 2. Utwórz środowisko wirtualne: `python -m venv venv`
 3. Aktywuj środowisko i zainstaluj zależności: `pip install django`
 4. Wykonaj migracje bazy danych: `python manage.py migrate`
