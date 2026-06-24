@@ -1,0 +1,17 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Zgłoś problem{% endblock %}
+
+{% block content %}
+    <h1>Zgłoś problem z aplikacją</h1>
+    
+    {% if success %}
+        <h3 style="color: green;">Dziękujemy! Zgłoszenie zostało zapisane w bazie.</h3>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Wyślij zgłoszenie</button>
+    </form>
+{% endblock %}

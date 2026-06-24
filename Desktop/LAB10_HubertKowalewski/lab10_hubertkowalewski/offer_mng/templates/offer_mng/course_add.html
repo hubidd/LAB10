@@ -1,0 +1,17 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Dodaj szkolenie{% endblock %}
+
+{% block content %}
+    <h1>Dodaj nowe szkolenie do oferty</h1>
+    
+    {% if success %}
+        <h3 style="color: green;">Szkolenie zostało zapisane pomyślnie!</h3>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Zapisz szkolenie</button>
+    </form>
+{% endblock %}
